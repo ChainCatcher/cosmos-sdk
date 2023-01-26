@@ -19,7 +19,7 @@ require (
 	github.com/stretchr/testify v1.8.1
 	github.com/tendermint/tendermint v0.37.0-rc2
 	google.golang.org/genproto v0.0.0-20230124163310-31e0e69b6fc2
-	google.golang.org/grpc v1.52.1
+	google.golang.org/grpc v1.52.3
 )
 
 require (
