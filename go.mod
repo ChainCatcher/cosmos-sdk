@@ -12,7 +12,7 @@ require (
 	cosmossdk.io/errors v1.0.0
 	cosmossdk.io/log v1.2.0
 	cosmossdk.io/math v1.1.2
-	cosmossdk.io/store v1.0.0-alpha.1.0.20230728080422-54ed7dab3982
+	cosmossdk.io/store v1.0.0-rc.0
 	cosmossdk.io/x/tx v0.9.1
 	github.com/99designs/keyring v1.2.1
 	github.com/bgentry/speakeasy v0.1.1-0.20220910012023-760eaf8b6816
@@ -42,7 +42,7 @@ require (
 	github.com/hdevalence/ed25519consensus v0.1.0
 	github.com/huandu/skiplist v1.2.0
 	github.com/improbable-eng/grpc-web v0.15.0
-	github.com/jhump/protoreflect v1.15.1
+	github.com/jhump/protoreflect v1.15.2
 	github.com/magiconair/properties v1.8.7
 	github.com/manifoldco/promptui v0.9.0
 	github.com/mattn/go-isatty v0.0.19
@@ -73,7 +73,7 @@ require (
 	github.com/DataDog/zstd v1.5.5 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2 // indirect
-	github.com/bufbuild/protocompile v0.5.1 // indirect
+	github.com/bufbuild/protocompile v0.6.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.3 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
@@ -82,7 +82,7 @@ require (
 	github.com/cockroachdb/redact v1.1.5 // indirect
 	github.com/cockroachdb/tokenbucket v0.0.0-20230807174530-cc333fc44b06 // indirect
 	github.com/cometbft/cometbft-db v0.8.0 // indirect
-	github.com/cosmos/iavl v1.0.0-beta.2 // indirect
+	github.com/cosmos/iavl v1.0.0-rc.1 // indirect
 	github.com/cosmos/ics23/go v0.10.0 // indirect
 	github.com/danieljoos/wincred v1.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
