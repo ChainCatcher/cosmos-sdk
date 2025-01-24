@@ -50,8 +50,8 @@ require (
 	gitlab.com/yawning/secp256k1-voi v0.0.0-20230925100816-f2616030848b
 	go.uber.org/mock v0.5.0
 	golang.org/x/crypto v0.32.0
-	google.golang.org/genproto/googleapis/api v0.0.0-20241015192408-796eee8c2d53
-	google.golang.org/grpc v1.69.4
+	google.golang.org/genproto/googleapis/api v0.0.0-20241202173237-19429a94021a
+	google.golang.org/grpc v1.70.0
 	google.golang.org/protobuf v1.36.3
 	gotest.tools/v3 v3.5.1
 	pgregory.net/rapid v1.1.0
