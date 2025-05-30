@@ -2,6 +2,8 @@ module cosmossdk.io/log
 
 go 1.23.0
 
+toolchain go1.24.1
+
 require (
 	github.com/bytedance/sonic v1.13.2
 	github.com/pkg/errors v0.9.1
