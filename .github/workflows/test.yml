@@ -26,19 +26,19 @@ jobs:
         run: go list ./... > pkgs.txt
       - name: Split pkgs into 4 files
         run: split -d -n l/4 pkgs.txt pkgs.txt.part.
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: "${{ github.sha }}-00"
           path: ./pkgs.txt.part.00
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: "${{ github.sha }}-01"
           path: ./pkgs.txt.part.01
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: "${{ github.sha }}-02"
           path: ./pkgs.txt.part.02
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: "${{ github.sha }}-03"
           path: ./pkgs.txt.part.03
@@ -75,7 +75,7 @@ jobs:
         if: env.GIT_DIFF
         run: |
           cat pkgs.txt.part.${{ matrix.part }} | xargs go test -mod=readonly -race -timeout 30m -coverprofile=${{ matrix.part }}profile.out -covermode=atomic -tags='ledger test_ledger_mock'
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-${{ matrix.part }}-coverage"
@@ -105,7 +105,7 @@ jobs:
         if: env.GIT_DIFF
         run: |
           make test-integration-cov
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-integration-coverage"
@@ -135,7 +135,7 @@ jobs:
         if: env.GIT_DIFF
         run: |
           make test-e2e-cov
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-e2e-coverage"
@@ -317,7 +317,7 @@ jobs:
         run: |
           cd client/v2
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-clientv2-coverage"
@@ -344,7 +344,7 @@ jobs:
         run: |
           cd core
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-core-coverage"
@@ -371,7 +371,7 @@ jobs:
         run: |
           cd depinject
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-depinject-coverage"
@@ -398,7 +398,7 @@ jobs:
         run: |
           cd errors
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-errors-coverage"
@@ -425,7 +425,7 @@ jobs:
         run: |
           cd math
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-math-coverage"
@@ -452,7 +452,7 @@ jobs:
         run: |
           cd collections
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-collections-coverage"
@@ -479,7 +479,7 @@ jobs:
         run: |
           cd tools/cosmovisor
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-cosmovisor-coverage"
@@ -506,7 +506,7 @@ jobs:
         run: |
           cd tools/confix
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-confix-coverage"
@@ -534,7 +534,7 @@ jobs:
           cd store
           (cd streaming/abci/examples/file && go build .)
           go test -ldflags "-r /usr/local/lib" -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-store-coverage"
@@ -561,7 +561,7 @@ jobs:
         run: |
           cd log
           go test -mod=readonly -timeout 30m -coverprofile=coverage.out -covermode=atomic -tags='norace ledger test_ledger_mock' ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-log-coverage"
@@ -592,7 +592,7 @@ jobs:
         run: |
           cd enterprise/poa
           go test -v -race -coverprofile=coverage.out -timeout 30m ./...
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: env.GIT_DIFF
         with:
           name: "${{ github.sha }}-poa-coverage"
